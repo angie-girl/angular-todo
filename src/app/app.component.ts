@@ -64,9 +64,9 @@ export class AppComponent implements OnInit {
         label: 'Piorytet',
         required: false,
         options: [
-          { value: 1, label: 'Niski ' },
-          { value: 2, label: 'Średni ' },
-          { value: 3, label: 'Wysoki ' },
+          { value: 1, label: 'Niski' },
+          { value: 2, label: 'Średni' },
+          { value: 3, label: 'Wysoki' },
         ],
       },
     },

@@ -33,7 +33,7 @@ button {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  flex-basis: 30%;
+  min-height: 100px;
   margin: 20px;
   padding: 25px;
   border-radius: 4px;
@@ -118,6 +118,8 @@ button {
   .board-column {
     display: flex;
     flex-direction: column;
+    flex-basis: 30%;
+    min-height: auto;
   }
 
   .task {
