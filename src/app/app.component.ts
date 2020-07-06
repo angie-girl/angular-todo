@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
@@ -14,8 +14,6 @@ export class AppComponent implements OnInit {
   title = 'todo-project';
   form = new FormGroup({});
   model: any = {};
-  // todoText: string = "";
-  // todoList: any = [];
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[] = [
     {
@@ -72,34 +70,20 @@ export class AppComponent implements OnInit {
         ],
       },
     },
-
   ];
 
- 
+
   board: Board = new Board('Test Board', [
-    new Column('Do zrobienia', [
-      "Some random idea",
-      "This is another random idea",
-      "build an awesome application"
-    ]),
-    new Column('W toku', [
-      "Lorem ipsum",
-      "foo",
-      "This was in the 'Research' column"
-    ]),
-    new Column('Gotowe', [
-      'Get to work',
-      'Pick up groceries',
-      'Go home',
-      'Fall asleep'
-    ]),
+    new Column('Do zrobienia', []),
+    new Column('W toku', []),
+    new Column('Gotowe', []),
   ]);
 
   constructor() { }
 
   submit() {
-    // alert(JSON.stringify(this.todoList));
-    console.log("adding the todoText - ", this.model);
+    console.log("adding the task - ", this.model);
+    this.board.columns[this.model.Select - 1].tasks.push(this.model.Input);
   }
 
   ngOnInit() {
@@ -115,5 +99,4 @@ export class AppComponent implements OnInit {
         event.currentIndex);
     }
   }
-
 }
