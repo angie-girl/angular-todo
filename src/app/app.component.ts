@@ -14,8 +14,8 @@ export class AppComponent implements OnInit {
   title = 'todo-project';
   form = new FormGroup({});
   model: any = {};
-  todoText: string = "";
-  todoList: any = [];
+  // todoText: string = "";
+  // todoList: any = [];
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[] = [
     {
@@ -74,28 +74,8 @@ export class AppComponent implements OnInit {
     },
 
   ];
-  submit() {
-    alert(JSON.stringify(this.todoList));
-  }
 
-  constructor() { }
-
-  onAddTodoText() {
-    if (this.todoText!=""){
-      console.log("adding the todoText - ", this.todoText);
-      let todoObj = {todoId: this.todoList.length, text: this.todoText};
-
-      this.todoList.push(todoObj);
-      this.todoText = "";
-    }
-  }
-  
-  onClearTodoText() {
-    console.log("clearing the todoList - ", this.todoList);
-    this.todoList=[];
-    this.todoText="";
-  }
-
+ 
   board: Board = new Board('Test Board', [
     new Column('Do zrobienia', [
       "Some random idea",
@@ -114,6 +94,13 @@ export class AppComponent implements OnInit {
       'Fall asleep'
     ]),
   ]);
+
+  constructor() { }
+
+  submit() {
+    // alert(JSON.stringify(this.todoList));
+    console.log("adding the todoText - ", this.model);
+  }
 
   ngOnInit() {
   }
